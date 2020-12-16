@@ -26,7 +26,7 @@ var mainGameLoop = window.setInterval(function () {
 function upgrade1() {
 	if (Decimal.compare(game.money, game.upgrade1cost) >= 0) {
 		game.money = Decimal.divide(game.money, game.upgrade1cost);
-		game.upgrade1cost = Decimal.pow(game.upgrade1cost, 1.125);
+		game.upgrade1cost = Decimal.pow(game.upgrade1cost, 1.15);
 		game.multiplierOnClick = Decimal.pow(game.multiplierOnClick, 1.1);
 		game.upgrade1level = Decimal.add(game.upgrade1level, 1);
 		document.getElementById("upgrade1").innerHTML = "Level: " + game.upgrade1level + "<br /> Cost: " + notate(game.upgrade1cost);
