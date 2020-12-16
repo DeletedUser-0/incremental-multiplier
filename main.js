@@ -15,6 +15,7 @@ function multiply() {
     document.getElementById("click").innerHTML = "Clicks: " + notate2(game.click);
     document.getElementById("money").innerHTML = "Number: " + notate(game.money);
     document.getElementById("multiplier").innerHTML = "Multiplier per click: " + game.multiplierOnClick.toPrecision(4);
+	document.getElementById("upgrade1").innerHTML = "Level: " + saveData.upgrade1level + "<br /> Cost: " + notate(saveData.upgrade1cost);
 }
 
 var mainGameLoop = window.setInterval(function () {
@@ -42,8 +43,8 @@ function notate(n) {
 
 function notate2(n) {
     var e = n.exponent;
-    if (e < 3) return (n.mantissa * Math.pow(10, e));
-    return `${n.mantissa.toPrecision(3)}e${e.toLocaleString("pt-BR")}`;
+    if (e < 3) return (n.mantissa * Math.round(Math.pow(10, e)));
+    return `${Math.round(n.mantissa.toPrecision(3)}e${e.toLocaleString("pt-BR"))}`;
 }
 
 function notate3(n) {
