@@ -43,8 +43,8 @@ function notate(n) {
 
 function notate2(n) {
     	var e = n.exponent;
-    	if (e < 3) return Math.round(n.mantissa * (Math.pow(10, e));
-    	return `${Math.round(n.mantissa.toPrecision(3))}e${e.toLocaleString("pt-BR"))}`;
+    	if (e < 3) return Math.round(n.mantissa * (Math.pow(10, e)));
+   	return `${Math.round(n.mantissa.toPrecision(3))}e${e.toLocaleString("pt-BR"))}`;
 }
 
 function notate3(n) {
