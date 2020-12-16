@@ -12,7 +12,7 @@ function multiply() {
 	game.click = Decimal.add(game.click, 1).divide(1);
 	game.multiplierEffect = Decimal.sub(game.multiplierEffect, 0.00000001);
 	game.multiplierOnClick = Decimal.times(game.multiplierOnClick, game.multiplierEffect)
-	document.getElementById("click").innerHTML = "Clicks: " + notate2(game.click);
+	document.getElementById("click").innerHTML = "Clicks: " + game.click;
 	document.getElementById("money").innerHTML = "Number: " + notate(game.money);
 	document.getElementById("multiplier").innerHTML = "Multiplier per click: " + game.multiplierOnClick.toPrecision(4);
 	document.getElementById("upgrade1").innerHTML = "Level: " + saveData.upgrade1level + "<br /> Cost: " + notate(saveData.upgrade1cost);
@@ -39,12 +39,6 @@ function notate(n) {
 	var e = n.exponent;
 	if (e < 3) return (n.mantissa * Math.pow(10, e)).toPrecision(3);
 	return `${n.mantissa.toPrecision(3)}e${e.toLocaleString("pt-BR")}`;
-}
-
-function notate2(n) {
-    	var e = n.exponent;
-    	if (e < 3) return Math.round(n.mantissa * (Math.pow(10, e)));
-   	return `${Math.round(n.mantissa.toPrecision(3))}e${e.toLocaleString("pt-BR"))}`;
 }
 
 function notate3(n) {
