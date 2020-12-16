@@ -1,2 +1,2 @@
-# incremental-multiplier
+# Incremental Multiplier
 A new game!
