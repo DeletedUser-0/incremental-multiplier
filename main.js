@@ -41,6 +41,12 @@ function notate(n) {
 	return `${n.mantissa.toPrecision(3)}e${e.toLocaleString("pt-BR")}`;
 }
 
+function notate2(n) {
+    	var e = n.exponent;
+    	if (e < 3) return Math.round(n.mantissa * (Math.pow(10, e)));
+   	return `${Math.round(n.mantissa.toPrecision(3))}e${e.toLocaleString("pt-BR"))}`;
+}
+
 function notate3(n) {
 	var e = n.exponent;
 	if (e < 4) return (n.mantissa * Math.pow(10, e)).toPrecision(4);
@@ -59,7 +65,7 @@ function loadGame() {
 	saveData.multiplierOnClick = new Decimal(JSON.parse(saveData.multiplierOnClick));
 	game = saveData;
 	return saveData.obj || "default";
-	document.getElementById("upgrade1").innerHTML = "Level: " + saveData.upgrade1level + "<br /> Cost: " + notate(saveData.upgrade1cost);
+	document.getElementById("upgrade1").innerHTML = "Level: " + game.upgrade1level + "<br /> Cost: " + notate(game.upgrade1cost);
 	document.getElementById("money").innerHTML = "Number: " + notate(saveData.money);
 	document.getElementById("multiplier").innerHTML = "Multiplier per click: " + saveData.multiplierOnClick.toPrecision(4);
 }
